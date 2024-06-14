@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Email Spam Classifier</title>
+        <link rel="stylesheet" href="./static/css/styles.css" />
+        <link rel="icon" href="./static/favicon.ico" type="image/x-icon" />
+        <script>
+            window.onload = function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (
+                    !urlParams.has("submitted") &&
+                    window.location.pathname === "/predict"
+                ) {
+                    window.location.href = "/";
+                }
+            };
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="column sample-email">
+                <h3 class="center">SAMPLE EMAIL</h3>
+                <div class="email-section">
+                    <h4 class="spam">SPAM</h4>
+                    <p>
+                        My wife and I won the Mega Millions jackpot for $410
+                        million USD on June 9, 2020 and we have voluntarily
+                        decided to donate the amount of 10M USD for charity, we
+                        are trying to reach random people from various sources
+                        and fashions to touch life from various angles,
+                        Therefore you get the message here. You have been
+                        registered as one of the lucky recipients to receive
+                        $2,000,000.00 USD.<br /><br />
+                        To verify:<br />
+                        <a
+                            href="https://edition.cnn.com/2020/19/us/mega-millions-arizona-jackpot-trnd/index.html"
+                            target="_blank"
+                            >CNN Article</a
+                        ><br /><br />
+                        Get back to me on how to receive the donation.<br />
+                        Thank you<br />
+                        Dennis and Maria McGee
+                    </p>
+                </div>
+                <div class="email-section">
+                    <h4 class="not-spam">NOT SPAM</h4>
+                    <p>
+                        Dear SIH Participant,<br /><br />
+                        We hope that you are doing well!!!<br />
+                        The Inter-Institutional Inclusive Innovation Center
+                        (i4C) and the team of SIH are grateful to you for
+                        participating in Smart India Hackathon, the world's
+                        largest hackathon, and giving such genius solutions. We
+                        are the team that consistently strives to bring out the
+                        most innovative educational platforms, like Smart India
+                        Hackathon, Smart School Hackathon.<br /><br />
+                        To reconnect with us please share your details by
+                        filling the form:
+                        <a
+                            href="https://forms.gle/6rrMSQCLvuMCKi8"
+                            target="_blank"
+                            >Google Form</a
+                        ><br /><br />
+                        Looking forward to a positive response!!!<br /><br />
+                        Thanks, Team i4C
+                    </p>
+                </div>
+            </div>
+            <div class="column form-column">
+                <h1 class="center">Email Spam Classifier</h1>
+                {% if response %} {% if response == -1 %}
+                <h2 class="result not-spam">Not Spam</h2>
+                {% else %}
+                <h2 class="result spam">Spam</h2>
+                {% endif %} {% endif %}
+                <form action="/predict?submitted=true" method="post">
+                    <label for="email">Type your email</label><br /><br />
+                    <textarea
+                        id="email"
+                        rows="15"
+                        name="email"
+                        placeholder="Type or paste your email here"
+                    ></textarea
+                    ><br /><br />
+                    <input type="submit" value="Check" class="submit-button" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
