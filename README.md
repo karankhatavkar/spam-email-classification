@@ -2,7 +2,7 @@
 
 #### https://spam-email-classification.onrender.com
 
-<span style="color:red"> Approximate Loading Time : 60 Seconds </span>
+**Approximate Loading Time : 60 Seconds**
 
 ## Project Overview
 
