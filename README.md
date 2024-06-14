@@ -1,42 +1,46 @@
 # Spam Email Classification Using Naive Bayes
+
 #### https://spam-email-classification.onrender.com
+
+<span style="color:red"> Approximate Loading Time : 60 Seconds </span>
+
 ## Project Overview
 
 This project aims to classify emails as spam or not spam using the Naive Bayes algorithm. The model is trained on a dataset from Kaggle and deployed via a Flask web application.
 
 ## Table of Contents
 
-- [Spam Email Classification Using Naive Bayes](#spam-email-classification-using-naive-bayes)
-  - [Project Overview](#project-overview)
-  - [Table of Contents](#table-of-contents)
-  - [Dataset](#dataset)
-  - [Model Training](#model-training)
-    - [1. Importing Libraries](#1-importing-libraries)
-    - [2. Reading and Exploring the Data](#2-reading-and-exploring-the-data)
-    - [3. Data Preprocessing](#3-data-preprocessing)
-    - [4. Data Visualization](#4-data-visualization)
-    - [5. Splitting the Data](#5-splitting-the-data)
-    - [6. Vectorization](#6-vectorization)
-    - [7. Model Training](#7-model-training)
-    - [8. Model Evaluation](#8-model-evaluation)
-    - [Exporting the Model](#exporting-the-model)
-  - [Flask Application](#flask-application)
-    - [Structure](#structure)
-    - [app.py](#apppy)
-  - [Setup and Installation](#setup-and-installation)
-    - [Prerequisites](#prerequisites)
-    - [Installation Steps](#installation-steps)
-    - [1. Clone the repository:](#1-clone-the-repository)
-    - [2. Navigate to the project directory:](#2-navigate-to-the-project-directory)
-    - [3. Create a virtual environment and activate it:](#3-create-a-virtual-environment-and-activate-it)
-    - [4. Install the required packages:](#4-install-the-required-packages)
-  - [Usage](#usage)
-    - [1. Run the Flask application:](#1-run-the-flask-application)
-    - [2. Open your web browser and go to http://127.0.0.1:5000/](#2-open-your-web-browser-and-go-to-http1270015000)
-    - [3. Enter the email text and click on the "Predict" button to see if the email is spam or not.](#3-enter-the-email-text-and-click-on-the-predict-button-to-see-if-the-email-is-spam-or-not)
-  - [Results](#results)
-  - [Contributing](#contributing)
-  - [License](#license)
+-   [Spam Email Classification Using Naive Bayes](#spam-email-classification-using-naive-bayes) - [https://spam-email-classification.onrender.com](#httpsspam-email-classificationonrendercom)
+    -   [Project Overview](#project-overview)
+    -   [Table of Contents](#table-of-contents)
+    -   [Dataset](#dataset)
+    -   [Model Training](#model-training)
+        -   [1. Importing Libraries](#1-importing-libraries)
+        -   [2. Reading and Exploring the Data](#2-reading-and-exploring-the-data)
+        -   [3. Data Preprocessing](#3-data-preprocessing)
+        -   [4. Data Visualization](#4-data-visualization)
+        -   [5. Splitting the Data](#5-splitting-the-data)
+        -   [6. Vectorization](#6-vectorization)
+        -   [7. Model Training](#7-model-training)
+        -   [8. Model Evaluation](#8-model-evaluation)
+        -   [Exporting the Model](#exporting-the-model)
+    -   [Flask Application](#flask-application)
+        -   [Structure](#structure)
+        -   [app.py](#apppy)
+    -   [Setup and Installation](#setup-and-installation)
+        -   [Prerequisites](#prerequisites)
+        -   [Installation Steps](#installation-steps)
+        -   [1. Clone the repository:](#1-clone-the-repository)
+        -   [2. Navigate to the project directory:](#2-navigate-to-the-project-directory)
+        -   [3. Create a virtual environment and activate it:](#3-create-a-virtual-environment-and-activate-it)
+        -   [4. Install the required packages:](#4-install-the-required-packages)
+    -   [Usage](#usage)
+        -   [1. Run the Flask application:](#1-run-the-flask-application)
+        -   [2. Open your web browser and go to http://127.0.0.1:5000/](#2-open-your-web-browser-and-go-to-http1270015000)
+        -   [3. Enter the email text and click on the "Predict" button to see if the email is spam or not.](#3-enter-the-email-text-and-click-on-the-predict-button-to-see-if-the-email-is-spam-or-not)
+    -   [Results](#results)
+    -   [Contributing](#contributing)
+    -   [License](#license)
 
 ## Dataset
 
