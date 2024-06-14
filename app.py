@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import pickle
 
 app = Flask(__name__)
@@ -11,8 +11,11 @@ model = pickle.load(open("model/model.pkl", 'rb'))
 def index():
     return render_template("index.html")
 
-@app.route("/predict", methods=["post"])
+@app.route("/predict", methods=["GET", "POST"])
 def predict():
+    if request.method == "GET":
+        return redirect(url_for('index'))
+    
     email = request.form.get('email')
     
     # Prdict Email 

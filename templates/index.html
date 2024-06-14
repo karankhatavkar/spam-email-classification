@@ -6,17 +6,6 @@
         <title>Email Spam Classifier</title>
         <link rel="stylesheet" href="./static/css/styles.css" />
         <link rel="icon" href="./static/favicon.ico" type="image/x-icon" />
-        <script>
-            window.onload = function () {
-                const urlParams = new URLSearchParams(window.location.search);
-                if (
-                    !urlParams.has("submitted") &&
-                    window.location.pathname === "/predict"
-                ) {
-                    window.location.href = "/";
-                }
-            };
-        </script>
     </head>
 
     <body>
@@ -76,7 +65,7 @@
                 {% else %}
                 <h2 class="result spam">Spam</h2>
                 {% endif %} {% endif %}
-                <form action="/predict?submitted=true" method="post">
+                <form action="/predict" method="post">
                     <label for="email">Type your email</label><br /><br />
                     <textarea
                         id="email"
